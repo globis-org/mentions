@@ -58,7 +58,7 @@ class Webhooks::From::Github < Webhooks::From::Base
     when review_requested?
       "you've been review requested"
     else
-      "you've been mentioned"
+      "you've been mentioned. Content:" + search_content('body')
     end
   end
 end
